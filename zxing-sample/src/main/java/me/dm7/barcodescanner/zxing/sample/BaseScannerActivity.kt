@@ -9,8 +9,9 @@ open class BaseScannerActivity : AppCompatActivity() {
     fun setupToolbar() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+        // disable "back" option
         val ab = supportActionBar
-        ab?.setDisplayHomeAsUpEnabled(true)
+        ab?.setDisplayHomeAsUpEnabled(false)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

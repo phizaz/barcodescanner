@@ -106,9 +106,6 @@ class FullScannerActivity : BaseScannerActivity(), MessageDialogFragment.Message
         menuItem = menu.add(Menu.NONE, R.id.menu_camera_selector, 0, R.string.select_camera)
         MenuItemCompat.setShowAsAction(menuItem, MenuItem.SHOW_AS_ACTION_NEVER)
 
-        menuItem = menu.add(Menu.NONE, R.id.menu_attendance_list, 0, R.string.attendance_list)
-        MenuItemCompat.setShowAsAction(menuItem, MenuItem.SHOW_AS_ACTION_NEVER)
-
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -144,11 +141,6 @@ class FullScannerActivity : BaseScannerActivity(), MessageDialogFragment.Message
                 mScannerView!!.stopCamera()
                 val cFragment = CameraSelectorDialogFragment.newInstance(this, mCameraId)
                 cFragment.show(supportFragmentManager, "camera_selector")
-                return true
-            }
-            R.id.menu_attendance_list -> {
-                val intent = Intent(applicationContext, AttendanceListActivity::class.java)
-                startActivity(intent)
                 return true
             }
             else -> return super.onOptionsItemSelected(item)
