@@ -1,11 +1,14 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 dependencies {
     //compile project(":zxing")
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     compile libraries.barcodescanner_zxing
     compile libraries.support_v4
     compile libraries.appcompat_v7
     compile libraries.design_support
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 
 android {
@@ -13,3 +16,8 @@ android {
         applicationId "${project.group}.zxing.sample"
     }
 }
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'kotlin-android-extensions'
